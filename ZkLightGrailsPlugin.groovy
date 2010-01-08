@@ -7,15 +7,16 @@ class ZkLightGrailsPlugin {
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+        "grails-app/views/error.gsp",
+        "copy.sh"
     ]
 
     // TODO Fill in these fields
-    def author = "Your name"
-    def authorEmail = ""
-    def title = "Plugin summary/headline"
+    def author = "Chanwit Kaewkasi"
+    def authorEmail = "chanwit@gmail.com"
+    def title = "ZKLight for Grails"
     def description = '''\\
-Brief description of the plugin.
+Support ZKLight in Grails applications
 '''
 
     // URL to the plugin's documentation
