@@ -7,7 +7,12 @@ class ZkLightGrailsPlugin {
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
+    	"grails-app/controllers/**/Test*.groovy",
+    	"grails-app/domain/**/Test*.groovy",
         "grails-app/views/error.gsp",
+        "test/**",
+        "web-app/WEB-INF/*",
+        "web-app/test/*",
         "copy.sh"
     ]
 
