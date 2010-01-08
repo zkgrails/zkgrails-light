@@ -1,0 +1,20 @@
+<plugin name='zk-light' version='0.1' grailsVersion='1.2.0 &gt; *'>
+  <author>Chanwit Kaewkasi</author>
+  <authorEmail>chanwit@gmail.com</authorEmail>
+  <title>ZKLight for Grails</title>
+  <description>\
+Support ZKLight in Grails applications
+</description>
+  <documentation>http://grails.org/plugin/zk-light</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+  </resources>
+  <dependencies>
+    <resolvers>
+      <resolver type='grailsPlugins' name='grailsPlugins' />
+    </resolvers>
+  </dependencies>
+  <behavior />
+</plugin>
