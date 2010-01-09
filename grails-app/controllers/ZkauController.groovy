@@ -1,0 +1,7 @@
+class ZkauController {
+
+	def index = {
+
+	}
+
+}

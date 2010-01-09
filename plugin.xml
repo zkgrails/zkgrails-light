@@ -10,6 +10,9 @@ Support ZKLight in Grails applications
     <resource>BuildConfig</resource>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
+    <resource>TestController</resource>
+    <resource>Test</resource>
+    <resource>ZkLightTagLib</resource>
   </resources>
   <dependencies>
     <resolvers>
