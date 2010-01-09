@@ -28,33 +28,88 @@ class ZkLightTagLib {
 		</script>
 """
 	}
-	
+
+	// Normal tags
+	private normal(tag, attrs, body) {
+		// attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")
+		return """
+		<${tag} ${attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")}>
+			${body()}
+		</${tag}>"""
+	}	
 	def window = { attrs, body ->
 		def apply = attrs.remove("apply")
 		if(apply) {
 			// generate event handlers
 		}
-		// attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")
-		out << """
-		<window ${attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")}>
-			${body()}
-		</window>
-"""
+		out << normal("combobox", attrs, body)
+	}
+	def combobox = { attrs, body ->
+		out << normal("combobox", attrs, body)
 	}
 	
-	def combobox = { attrs, body ->
-		out << """
-		<combobox ${attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")}>
-			${body()}
-		</combobox>
-"""		
+	// border layout
+	def borderlayout = { attrs, body ->
+		out << normal("borderlayout", attrs, body)
+	}
+	def north = { attrs, body ->
+		out << normal("north", attrs, body)
+	}
+	def west = { attrs, body ->
+		out << normal("west", attrs, body)
+	}
+	def east = { attrs, body ->
+		out << normal("east", attrs, body)
+	}
+	def south = { attrs, body ->
+		out << normal("south", attrs, body)
+	}
+	def center = { attrs, body ->
+		out << normal("center", attrs, body)
+	}
+	
+	// tree	
+	def tree = { attrs, body ->
+		out << normal("tree", attrs, body)
+	}
+	def treechildren = { attrs, body ->
+		out << normal("treechildren", attrs, body)
+	}
+	def treeitem = { attrs, body ->
+		out << normal("treeitem", attrs, body)
+	}
+
+	def div = { attrs, body ->
+		out << normal("div", attrs, body)
+	}
+	def include = { attrs, body ->
+		out << normal("include", attrs, body)
+	}
+	def iframe = { attrs, body ->
+		out << normal("iframe", attrs, body)
+	}
+	def hbox = { attrs, body ->
+		out << normal("hbox", attrs, body)
+	}
+	def vbox = { attrs, body ->
+		out << normal("vbox", attrs, body)
+	}
+
+	// Leaf tags	
+	private leaf(tag, attrs) {
+		return "<${tag} ${attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")}/>"
 	}
 	
 	def comboitem = { attrs, body ->
-		out << "<comboitem ${attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")}/>"
-	}
-	
+		out << leaf("comboitem", attrs)
+	}	
 	def separator = { attrs, body ->
-		out << "<separator ${attrs.collect { k, v -> "${k}=\"${v}\""}.join(" ")}/>"
+		out << leaf("separator", attrs)
+	}
+	def toolbarbutton = { attrs, body ->
+		out << leaf("toolbarbutton", attrs)
+	}
+	def label = { attrs, body ->
+		out << leaf("label", attrs)		
 	}
 }
